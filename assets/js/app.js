@@ -1,46 +1,27 @@
 $(document).ready(function(){
+  //Cargador Inicial
   setInterval(function() {
     $('.home').fadeOut();
     $('.first-section').show();
     $('.second-section').show();
   }, 2000);
 
-  $('.picture-1').mouseover(function () {
-    $('.picture-content-1').show();
-  }).mouseout(function () {
-    $('.picture-content-1').hide();
-  });
+  //Hover
+  $('.picture').hover(
+    function() {
+      $(this).find('.picture-content').addClass('show');
+    }, function() {
+      $(this).find('.picture-content').removeClass('show');
+    }
+  );
 
-  $('.picture-2').mouseover(function () {
-    $('.picture-content-2').show();
-  }).mouseout(function () {
-    $('.picture-content-2').hide();
-  });
-
-  $('.picture-3').mouseover(function () {
-    $('.picture-content-3').show();
-  }).mouseleave(function () {
-    $('.picture-content-3').hide();
-  });
-
-  $('.picture-4').mouseover(function () {
-    $('.picture-content-4').show();
-  }).mouseout(function () {
-    $('.picture-content-4').hide();
-  });
-
-  $('.picture-5').mouseover(function () {
-    $('.picture-content-5').show();
-  }).mouseout(function () {
-    $('.picture-content-5').hide();
-  });
-
-
+  //Eventos de click en el Dropdown
   $('.dropdown-menu li:first').click(chinese);
   $('.dropdown-menu li:nth-child(2)').click(arabian);
   $('.dropdown-menu li:last-child').click(japanese);
   $('.first-section h1').click(homeresto);
 
+  //Funciones de cada categoría
   function chinese( ){
     $('.home-resto').fadeOut();
     $('.arabian').fadeOut();
